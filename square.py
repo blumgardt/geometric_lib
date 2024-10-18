@@ -1,11 +1,10 @@
-
 def area(a):
     '''
-    Возвращает площадь квадрата
-        Параметр:
-            a (int) : стона квадрата, десятичное число
-        Возвращаемое значение:
-            area (int) : десятичное число, площадь квадрата по формуле
+    Returns the area of a square
+        Parameter:
+            a (int): side of the square, decimal number
+        Return value:
+            area (int): decimal number, area of the square using the formula
     '''
 
     return a * a
@@ -13,11 +12,11 @@ def area(a):
 
 def perimeter(a):
     '''
-    Возвращает периметр квадрата
-        Параметр:
-            a (int) : стона квадрата, десятичное число
-        Возвращаемое значение:
-            perimeter (int) : десятичное число, периметр квадрата по формуле
+    Returns the perimeter of a square
+        Parameter:
+            a (int): side of the square, decimal number
+        Return value:
+            perimeter (int): decimal number, perimeter of the square using the formula
     '''
 
     return 4 * a

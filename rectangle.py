@@ -1,30 +1,23 @@
 def area(a, b): 
     '''
-    Возвращает площадь прямоугольника
-        Параметр:
-            a (int) : длина, десятичное число
-            b (int) : ширина, десятичное число
-        Возвращаемое значение:
-            area (int) : десятичное число, площадь прямоугольника по формуле
+    Returns the area of a rectangle
+        Parameters:
+            a (int): length, decimal number
+            b (int): width, decimal number
+        Return value:
+            area (int): decimal number, area of the rectangle using the formula
     '''
 
     return a * b 
 
 def perimeter(a, b): 
     '''
-    Возвращает периметр прямоугольника
-        Параметр:
-            a (int) : длина, десятичное число
-            b (int) : ширина, десятичное число
-        Возвращаемое значение:
-            perimeter (int) : десятичное число, периметр прямоугольника по формуле
+    Returns the perimeter of a rectangle
+        Parameters:
+            a (int): length, decimal number
+            b (int): width, decimal number
+        Return value:
+            perimeter (int): decimal number, perimeter of the rectangle using the formula
     '''
 
     return (a + b) * 2
-
-
-
-
-
-
-

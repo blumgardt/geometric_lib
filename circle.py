@@ -1,13 +1,13 @@
 import math
-
+'''Import the math module that provides math constants and formulas'''
 
 def area(r):
     '''
-    Возвращает площадь круга
-        Параметр:
-            r (int) : радиус, десятичное число
-        Возвращаемое значение:
-            area (int) : десятичное число, площадь круга по формуле
+    Returns the area of a circle
+        Parameter:
+            r (int): radius, decimal number
+        Return value:
+            area (int): decimal number, area of the circle using the formula
     '''
 
     return math.pi * r * r
@@ -15,11 +15,11 @@ def area(r):
 
 def perimeter(r):
     '''
-    Возвращает периметр круга
-        Параметр:
-            r (int) : радиус, десятичное число
-        Возвращаемое значение:
-            perimeter (int) : десятичное число, периметр круга по формуле
+    Returns the perimeter of a circle
+        Parameter:
+            r (int): radius, decimal number
+        Return value:
+            perimeter (int): decimal number, perimeter of the circle using the formula
     '''
 
     return 2 * math.pi * r
