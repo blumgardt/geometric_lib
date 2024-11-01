@@ -22,28 +22,28 @@
 ### Area
 The function calculates the area of a specific shape using the corresponding formula
 > Function call example for a circle:
-```
+```python
 print(area(r))
 
 Input: r = 4
 Output: 50.26548245743669
 ```
 > Function call example for a rectangle:
-```
+```python
 print(area(r))
 
 Input: a = 2; b = 3
 Output: 6
 ```
 > Function call example for a square:
-```
+```python
 print(area(r))
 
 Input: a = 4
 Output: 16
 ```
 > Function call example for a triangle:
-```
+```python
 print(area(r))
 
 Input: a = 4; h = 10
@@ -55,28 +55,28 @@ Output: 20
 ### Perimeter
 The function calculates the perimeter of a specific shape using the corresponding formula
 > Function call example for a circle:
-```
+```python
 print(perimeter(r))
 
 Input: r = 5
 Output: 31.41592653589793
 ```
 > Function call example for a rectangle:
-```
+```python
 print(perimeter(r))
 
 Input: a = 2; b = 3
 Output: 12
 ```
 > Function call example for a square:
-```
+```python
 print(perimeter(r))
 
 Input: a = 5
 Output: 20
 ```
 > Function call example for a triangle:
-```
+```python
 print(perimeter(r))
 
 Input: a = 4; b = 3; c = 5
@@ -86,7 +86,7 @@ Output: 12
 
 # Project changelog
 > Commits with hashes
-```
+``` 
     commit 510d5bee6cc5d78184d46be305c0231f24fef206 (HEAD -> labwork2_docs, origin/labwork2_docs)
     Author: blumgardt <471752@niuitmo.ru>
     Date:   Thu Oct 17 14:46:03 2024 +0300
