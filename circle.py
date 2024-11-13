@@ -1,6 +1,7 @@
 import math
 import unittest
 '''Import the math module that provides math constants and formulas'''
+'''Import the unittest for testing'''
 
 def area(r):
     '''
@@ -39,13 +40,16 @@ print(perimeter(5))
 
 class CircleleTestCase(unittest.TestCase):
     def test_zero_mul(self):
+        """Tests area of a circle with radius 0, expecting an area of 0."""
         res = area(0)
         self.assertEqual(res, 0)
     
     def test_square_mul(self):
+        """Tests area of a circle with radius 4, expecting an approximate value of 50.265."""
         res = area(4)
         self.assertEqual(res, 50.26548245743669)
     
     def test_perimeter_add(self):
+        """Tests perimeter of a circle with radius 5, expecting an approximate value of 31.416."""
         res = perimeter(5)
         self.assertEqual(res, 31.41592653589793)
