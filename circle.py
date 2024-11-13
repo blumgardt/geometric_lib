@@ -1,4 +1,5 @@
 import math
+import unittest
 '''Import the math module that provides math constants and formulas'''
 
 def area(r):
@@ -35,3 +36,16 @@ def perimeter(r):
     return 2 * math.pi * r
 
 print(perimeter(5))
+
+class CircleleTestCase(unittest.TestCase):
+    def test_zero_mul(self):
+        res = area(0)
+        self.assertEqual(res, 0)
+    
+    def test_square_mul(self):
+        res = area(4)
+        self.assertEqual(res, 50.26548245743669)
+    
+    def test_perimeter_add(self):
+        res = perimeter(5)
+        self.assertEqual(res, 31.41592653589793)
