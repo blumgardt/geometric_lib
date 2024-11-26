@@ -1,13 +1,15 @@
+# Import necessary modules for testing and functionality
 import unittest
 import circle
 import rectangle
 import square
 import triangle
 
+# Define a test case class inheriting from unittest.TestCase
 class UnitTestCase(unittest.TestCase):
 
-#-------------Circle-------------
-
+    # ------------- Circle Tests -------------
+    
     def test_zero_mul_circle(self):
         """Tests area of a circle with radius 0, expecting an area of 0."""
         res = circle.area(0)
@@ -29,39 +31,39 @@ class UnitTestCase(unittest.TestCase):
         self.assertEqual(res, 31.41592653589793)
     
     def test_large_area_circle(self):
-        """Tests perimeter of a circle with radius 50000000, expecting an approximate value of 7853981633974482.0."""
+        """Tests area of a circle with a very large radius, ensuring correct computation of large values."""
         res = circle.area(50000000)
         self.assertEqual(res, 7853981633974482.0)
 
-#-------------Rectangle-------------
+    # ------------- Rectangle Tests -------------
     
     def test_zero_mul_rectangle(self):
-        '''Tests the area function with one side as 0, expecting an area of 0.'''
+        """Tests the area of a rectangle with one side as 0, expecting an area of 0."""
         res = rectangle.area(10, 0)
         self.assertEqual(res, 0)
     
     def test_square_mul_rectangle(self):
-        '''Tests the area function with equal length and width, forming a square. Expects area = side^2.'''
+        """Tests the area of a rectangle with equal side lengths, forming a square. Expects area = side^2."""
         res = rectangle.area(10, 10)
         self.assertEqual(res, 100)
     
     def test_perimeter_add_rectangle(self):
-        '''Tests the perimeter function with typical length and width values to verify perimeter calculation.'''
+        """Tests the perimeter of a rectangle with typical side lengths, verifying calculation correctness."""
         res = rectangle.perimeter(2, 5)
         self.assertEqual(res, 14)
     
     def test_negative_area_rectangle(self):
-        '''Tests the area function with a negative length, expecting the result to be the product of length and width.'''
+        """Tests the area of a rectangle with a negative side, verifying result as the product of lengths."""
         res = rectangle.area(-3, 5)
         self.assertEqual(res, -15)
 
     def test_large_perimeter_rectangle(self):
-        '''Tests the perimeter function with large values for length and width to verify correct handling of large inputs.'''
+        """Tests the perimeter of a rectangle with very large side values, verifying handling of large inputs."""
         res = rectangle.perimeter(100000, 50000)
         self.assertEqual(res, 300000)
 
-#-------------Square-------------
-
+    # ------------- Square Tests -------------
+    
     def test_zero_mul_square(self):
         """Tests area of a square with side 0, expecting an area of 0."""
         res = square.area(0)
@@ -78,17 +80,17 @@ class UnitTestCase(unittest.TestCase):
         self.assertEqual(res, 20)
 
     def test_large_square_area_square(self):
-        """Tests area of a square with a very large side, expecting a correct calculation for large values."""
+        """Tests area of a square with a very large side, ensuring correct handling of large inputs."""
         res = square.area(10000)
         self.assertEqual(res, 100000000)
 
     def test_negative_perimeter_square(self):
-        """Tests perimeter with a negative side value, expecting the product of 4 and the negative side."""
+        """Tests perimeter of a square with a negative side, expecting result as the product of 4 and the side."""
         res = square.perimeter(-5)
         self.assertEqual(res, -20)
 
-#-------------Triangle-------------
-
+    # ------------- Triangle Tests -------------
+    
     def test_zero_mul_triangle(self):
         """Tests area of a triangle with height 0, expecting area = 0."""
         res = triangle.area(10, 0)
@@ -105,11 +107,11 @@ class UnitTestCase(unittest.TestCase):
         self.assertEqual(res, 12)
     
     def test_negative_area_triangle(self):
-        """Tests area calculation with a negative base, expecting a negative area result if negative inputs are allowed."""
+        """Tests area calculation with a negative base, expecting the result to follow standard area formula."""
         res = triangle.area(-5, 10)
         self.assertEqual(res, -25)
 
     def test_large_perimeter_triangle(self):
-        """Tests perimeter calculation with very large side values, ensuring no overflow errors."""
+        """Tests perimeter calculation for a triangle with very large sides, ensuring correct computation."""
         res = triangle.perimeter(1000, 2000, 3000)
         self.assertEqual(res, 6000)

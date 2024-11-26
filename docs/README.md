@@ -89,8 +89,10 @@ Unit tests have been implemented to verify the accuracy and reliability of the a
 ### Circle Tests
 
 - Area with radius 0: Verifies that the area function returns 0 when the radius is zero.
+- Area with radius -10: Verifies that the area function returns 314.159 when the radius is -10.
 - Area with radius 4: Confirms the area calculation is approximately 50.27.
 - Perimeter with radius 5: Checks that the perimeter calculation returns approximately 31.42.
+- Area with radius 50000000: Verifies that the area function returns 7853981633974482.0 when the radius is 50000000.
 
 ### Rectangle Tests
 
@@ -114,31 +116,60 @@ Unit tests have been implemented to verify the accuracy and reliability of the a
 - Negative base area calculation: Checks the area function's behavior with a negative base, expecting a negative area.
 - Large perimeter calculation: Verifies that the perimeter function handles very large values correctly.
 
+All tests are in `pytests.py`
+
 ### Testing Framework
 
 The tests use Python’s built-in unittest module. Each shape has a dedicated test class to group related tests logically. This setup ensures comprehensive coverage for all shape-related calculations and helps detect any unexpected behavior.
 
+## CI/CD Integration
+### Workflow Overview
+
+A GitHub Actions workflow automates testing upon every push to the repository. It ensures all tests pass successfully in both Ubuntu and Windows environments.
+### Key Features:
+
+Build and Test on Ubuntu:
+
+1. Installs project dependencies (requirements.txt).
+2. Executes tests using Python’s unittest and generates a report via pytest.
+
+Build and Test on Windows:
+
+1. Similar process as Ubuntu, with adaptation for the Windows environment.
+
 # Project changelog
 > Commits with hashes
 ``` 
-    * commit 9326528a2ca03041b2265740e63a1e16ba515ac4 (HEAD -> labwork4_unit_tests, origin/labwork4_unit_tests)
+    * commit 2b60a62afe07032fd3756980231221c70936560d (HEAD -> labwork5_ci-cd)
+    | Author: blumgardt <471752@niuitmo.ru>
+    | Date:   Tue Nov 26 19:08:29 2024 +0300
+    |
+    |     added .yml file with ci-cd testing & added testing file pytests.py
+    |
+    * commit df175a336bb29de5236548566360741ada211b83 (origin/labwork4_unit_tests, labwork4_unit_tests)
+    | Author: blumgardt <471752@niuitmo.ru>
+    | Date:   Wed Nov 13 22:18:27 2024 +0300
+    |
+    |     documentation update
+    |
+    * commit 9326528a2ca03041b2265740e63a1e16ba515ac4
     | Author: blumgardt <471752@niuitmo.ru>
     | Date:   Wed Nov 13 21:59:02 2024 +0300
-    | 
+    |
     |     added unit tests
-    | 
+    |
     * commit c4df14ac24f79065e35ee6b0860c2789b5e511f9 (origin/labwork2_docs, labwork2_docs)
     | Author: blumgardt <471752@niuitmo.ru>
     | Date:   Fri Nov 1 10:23:58 2024 +0300
-    | 
+    |
     |     small commets & ReadMe update
-    | 
+    |
     * commit 49823c104085d443bb88e1059f4437b02401cdb5
     | Author: blumgardt <471752@niuitmo.ru>
     | Date:   Fri Oct 18 10:48:52 2024 +0300
-    | 
+    |
     |     documentation update
-    | 
+    |
     * commit 510d5bee6cc5d78184d46be305c0231f24fef206
     | Author: blumgardt <471752@niuitmo.ru>
     | Date:   Thu Oct 17 14:46:03 2024 +0300

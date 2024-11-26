@@ -1,0 +1,74 @@
+# Name of the workflow
+name: Labowork5 CI/CD
+
+# Trigger the workflow on every push to the repository
+on: [push]
+
+jobs:
+  # First job: Build and test on Ubuntu
+  build_ubuntu:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    steps:
+      - name: Checkout Code  # Step 1: Check out the repository code
+        uses: actions/checkout@v3
+
+      - name: Setup Python  # Step 2: Set up the Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  # Specify Python version
+      
+      - name: Install Dependencies  # Step 3: Install required dependencies
+        run: pip install -r requirements.txt
+  
+  # Second job: Test the code on Ubuntu
+  test_ubuntu:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    needs: build_ubuntu  # Wait for the build_ubuntu job to complete successfully
+    steps:
+      - name: Checkout Code  # Step 1: Check out the repository code
+        uses: actions/checkout@v3
+
+      - name: Setup Python  # Step 2: Set up the Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  # Specify Python version
+
+      - name: Run Unit Tests  # Step 3: Execute unit tests
+        run: python -m unittest pytests.py
+      
+      - name: Generate Test Report  # Step 4: Generate a test report in JUnit format
+        run: pytest --junitxml=results.xml
+
+  # Third job: Build and test on Windows
+  build_windows:
+    runs-on: windows-latest  # Use the latest Windows runner
+    steps:
+      - name: Checkout Code  # Step 1: Check out the repository code
+        uses: actions/checkout@v3
+
+      - name: Setup Python  # Step 2: Set up the Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  # Specify Python version
+      
+      - name: Install Dependencies  # Step 3: Install required dependencies
+        run: pip install -r requirements.txt
+  
+  # Fourth job: Test the code on Windows
+  test_windows:
+    runs-on: windows-latest  # Use the latest Windows runner
+    needs: build_windows  # Wait for the build_windows job to complete successfully
+    steps:
+      - name: Checkout Code  # Step 1: Check out the repository code
+        uses: actions/checkout@v3
+
+      - name: Setup Python  # Step 2: Set up the Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  # Specify Python version
+
+      - name: Run Unit Tests  # Step 3: Execute unit tests
+        run: python -m unittest pytests.py
+      
+      - name: Generate Test Report  # Step 4: Generate a test report in JUnit format
+        run: pytest --junitxml=results.xml
