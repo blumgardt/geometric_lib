@@ -2,34 +2,15 @@ import math
 '''Import the math module that provides math constants and formulas'''
 
 def area(r):
-    '''
-    Returns the area of a circle
-        Parameter:
-            r (int): radius, decimal number
-        Return value:
-            area (int): decimal number, area of the circle using the formula
-    Example:
-        print(area(r))
-
-        Input: r = 4
-        Output: 50.26548245743669
-    '''
-
+    if not isinstance(r, (int, float)):
+        raise TypeError("Radius must be a number")
+    if r < 0:
+        raise ValueError("Radius cannot be negative")
     return math.pi * r * r
 
-
 def perimeter(r):
-    '''
-    Returns the perimeter of a circle
-        Parameter:
-            r (int): radius, decimal number
-        Return value:
-            perimeter (int): decimal number, perimeter of the circle using the formula
-    Example:
-        print(perimeter(r))
-
-        Input: r = 5
-        Output: 31.41592653589793
-    '''
-
+    if not isinstance(r, (int, float)):
+        raise TypeError("Radius must be a number")
+    if r < 0:
+        raise ValueError("Radius cannot be negative")
     return 2 * math.pi * r

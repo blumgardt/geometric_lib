@@ -84,43 +84,35 @@ Output: 12
 ```
 
 ## Testing
+### Overview
 
-Unit tests have been implemented to verify the accuracy and reliability of the area and perimeter calculations for each shape. Below are descriptions of the tests performed:
-### Circle Tests
+Unit tests are implemented to verify the functionality and reliability of the area and perimeter calculations. The tests cover edge cases, such as zero and negative inputs, as well as large values.
+### Test Cases
+#### Circle
 
-- Area with radius 0: Verifies that the area function returns 0 when the radius is zero.
-- Area with radius -10: Verifies that the area function returns 314.159 when the radius is -10.
-- Area with radius 4: Confirms the area calculation is approximately 50.27.
-- Perimeter with radius 5: Checks that the perimeter calculation returns approximately 31.42.
-- Area with radius 50000000: Verifies that the area function returns 7853981633974482.0 when the radius is 50000000.
+- Area with radius = 0 → Output: 0
+- Negative radius → Raises ValueError
+- Large radius → Correctly handles large values.
 
-### Rectangle Tests
+#### Rectangle
 
-- Area with zero width: Tests that the area is zero when one side length is zero.
-- Square area (10x10): Ensures that a rectangle with equal sides calculates an area of 100.
-- Perimeter with sides 2 and 5: Checks the perimeter calculation for sides 2 and 5, expecting 14.
+- Zero width or height → S=0
+- Negative dimensions → Raises ValueError
+- Large dimensions → Correctly handles large values.
 
-### Square Tests
+#### Square
 
-- Area with side 0: Verifies that the area function returns 0 when the side length is zero.
-- Area with side 10: Confirms the area calculation returns 100.
-- Perimeter with side 5: Ensures the perimeter calculation returns 20.
-- Large area calculation: Tests the function’s handling of very large side lengths.
-- Negative side for perimeter: Checks perimeter calculation when the side is negative.
+- Zero side → S=0
+- Negative side → Raises ValueError
+- Large side → Handles large values without errors.
 
-### Triangle Tests
+#### Triangle
 
-- Area with height 0: Verifies that the area is zero when height is zero.
-- Area with base 10 and height 6: Confirms that the area calculation returns 30.
-- Perimeter with sides 3, 5, and 4: Ensures the perimeter function calculates 12.
-- Negative base area calculation: Checks the area function's behavior with a negative base, expecting a negative area.
-- Large perimeter calculation: Verifies that the perimeter function handles very large values correctly.
+- Zero height → S=0
+- Negative dimensions → Raises ValueError
+- Large sides → Correctly computes area and perimeter.
 
 All tests are in `pytests.py`
-
-### Testing Framework
-
-The tests use Python’s built-in unittest module. Each shape has a dedicated test class to group related tests logically. This setup ensures comprehensive coverage for all shape-related calculations and helps detect any unexpected behavior.
 
 ## CI/CD Integration
 ### Workflow Overview

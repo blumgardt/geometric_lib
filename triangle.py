@@ -1,34 +1,15 @@
-def area(a, h): 
-    '''
-    Returns the area of a triangle
-        Parameters:
-            a (int): side of the triangle, decimal number
-            h (int): height of the triangle, decimal number
-        Return value:
-            area (int): decimal number, area of the triangle using the formula
-    Example:
-        print(area(r))
+def area(a, h):
+    if not all(isinstance(i, (int, float)) for i in [a, h]):
+        raise TypeError("Base and height must be numbers")
+    if a < 0 or h < 0:
+        raise ValueError("Values cannot be negative")
+    return a * h / 2
 
-        Input: a = 4; h = 10
-        Output: 20
-    '''
-
-    return a * h / 2 
-
-def perimeter(a, b, c): 
-    '''
-    Returns the perimeter of a triangle
-        Parameters:
-            a (int): first side of the triangle, decimal number
-            b (int): second side of the triangle, decimal number
-            c (int): third side of the triangle, decimal number
-        Return value:
-            perimeter (int): decimal number, perimeter of the triangle using the formula
-    Example:
-        print(perimeter(r))
-
-        Input: a = 4; b = 3; c = 5
-        Output: 12
-    '''
-    
-    return a + b + c 
+def perimeter(a, b, c):
+    if not all(isinstance(i, (int, float)) for i in [a, b, c]):
+        raise TypeError("Sides must be numbers")
+    if a <= 0 or b <= 0 or c <= 0:
+        raise ValueError("Sides must be positive")
+    if a + b <= c or a + c <= b or b + c <= a:
+        raise Exception("Invalid triangle sides")
+    return a + b + c

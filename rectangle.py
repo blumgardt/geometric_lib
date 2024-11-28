@@ -1,33 +1,12 @@
-def area(a, b): 
-    '''
-    Returns the area of a rectangle
-        Parameters:
-            a (int): length, decimal number
-            b (int): width, decimal number
-        Return value:
-            area (int): decimal number, area of the rectangle using the formula
-    Example:
-        print(area(r))
+def area(a, b):
+    if not all(isinstance(i, (int, float)) for i in [a, b]):
+        raise TypeError("Both length and width must be numbers")
+    if a < 0 or b < 0:
+        raise ValueError("Values cannot be negative")
+    return a * b
 
-        Input: a = 2; b = 3
-        Output: 6
-    '''
+def perimeter(length, width):
+    if length <= 0 or width <= 0:
+        raise ValueError("Length and width must be positive")
+    return 2 * (length + width)
 
-    return a * b 
-
-def perimeter(a, b): 
-    '''
-    Returns the perimeter of a rectangle
-        Parameters:
-            a (int): length, decimal number
-            b (int): width, decimal number
-        Return value:
-            perimeter (int): decimal number, perimeter of the rectangle using the formula
-    Example:
-        print(perimeter(r))
-
-        Input: a = 2; b = 3
-        Output: 12
-    '''
-
-    return (a + b) * 2
