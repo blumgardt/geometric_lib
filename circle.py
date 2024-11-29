@@ -53,3 +53,13 @@ class CircleleTestCase(unittest.TestCase):
         """Tests perimeter of a circle with radius 5, expecting an approximate value of 31.416."""
         res = perimeter(5)
         self.assertEqual(res, 31.41592653589793)
+    
+    def test_negative_area(self):
+        '''Tests the area function with a negative length, expecting the result to be the product of length and width.'''
+        res = area(-3)
+        self.assertEqual(res, (-3)**2 * math.pi)
+
+    def test_large_perimeter(self):
+        '''Tests the perimeter function with large values for length and width to verify correct handling of large inputs.'''
+        res = perimeter(100000)
+        self.assertEqual(res, 2 * math.pi * 100000)

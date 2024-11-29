@@ -91,12 +91,16 @@ Unit tests have been implemented to verify the accuracy and reliability of the a
 - Area with radius 0: Verifies that the area function returns 0 when the radius is zero.
 - Area with radius 4: Confirms the area calculation is approximately 50.27.
 - Perimeter with radius 5: Checks that the perimeter calculation returns approximately 31.42.
+- Large area calculation: Tests the function’s handling of very large side lengths.
+- Negative side for perimeter: Checks perimeter calculation when the side is negative.
 
 ### Rectangle Tests
 
 - Area with zero width: Tests that the area is zero when one side length is zero.
 - Square area (10x10): Ensures that a rectangle with equal sides calculates an area of 100.
 - Perimeter with sides 2 and 5: Checks the perimeter calculation for sides 2 and 5, expecting 14.
+- Large area calculation: Tests the function’s handling of very large side lengths.
+- Negative side for perimeter: Checks perimeter calculation when the side is negative.
 
 ### Square Tests
 
