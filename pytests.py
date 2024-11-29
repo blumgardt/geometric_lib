@@ -65,7 +65,7 @@ class UnitTestCase(unittest.TestCase):
     def test_rectangle_area_positive(self):
         """Tests area of a rectangle with valid sides using subTest."""
         test_cases = [
-            ((10, 5), 0),
+            ((10, 5), 50),
             ((0, 5), 0),
         ]
         for (length, width), expected in test_cases:
