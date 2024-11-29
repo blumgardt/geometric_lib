@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.x'  # Specify Python version
   
-  # Second job: Test the code on Ubuntu
+  # Second job: Test the code on Ubuntu 
   test_ubuntu:
     runs-on: ubuntu-latest  # Use the latest Ubuntu runner
     needs: build_ubuntu  # Wait for the build_ubuntu job to complete successfully
